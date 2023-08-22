@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-
+<!-- 
 <head>
     <title>Paddy Leaf Disease Detection and Management</title>
-</head>
+</head> -->
 
 <body>
     <h1>Paddy Leaf Disease Detection and Management</h1>
-    <img src="link_to_your_banner_image" alt="Project Banner">
+    <img src="https://i.pinimg.com/1200x/41/7f/b3/417fb3dc5a6454419abaf53657a7fd8b.jpg" alt="Project Banner">
     <p><strong>Project Description:</strong></p>
     <p><strong>Empowering agriculture: Detect paddy leaf diseases early using AI, get precise pesticide recommendations, and classify disease stages. Revolutionize farming with technology.</strong></p>
     <p>Welcome to the Paddy Leaf Disease Detection and Management project! Agriculture is the backbone of many economies, and
@@ -46,15 +46,15 @@
     <ul>
         <li>Python</li>
         <li>TensorFlow</li>
-        <li>OpenCV</li>
-        <li>Machine Learning (Convolutional Neural Networks)</li>
-        <li>Web Development (HTML, CSS, JavaScript)</li>
-        <li>[List other technologies you've used]</li>
+        <li>Keras</li>
+        <li>Deep Learning (Convolutional Neural Networks)</li>
+        <!-- <li>Web Development (HTML, CSS, JavaScript)</li>
+        <li>[List other technologies you've used]</li> -->
     </ul>
     <p>Join us in revolutionizing paddy crop management through technology. Together, we can empower farmers and promote
         sustainable agriculture. Let's make a difference!</p>
     <p><strong>License:</strong></p>
-    <p>This project is licensed under the [Choose an appropriate license for your project].</p>
+    <p>This project is licensed under the Apache License Version 2.0, January 2004.</p>
 </body>
 
 </html>
