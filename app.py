@@ -6,7 +6,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input
 
-model_path = "../modelsss/efficientnetb3-paddy-disease-detection-97.31.h5" 
+model_path = "../modelsss/efficientnetb3-paddy-disease-detection-97.2.h5" 
 model = tf.keras.models.load_model(model_path)
 
 class_labels = {
