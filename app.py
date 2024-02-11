@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 from PIL import Image
 import numpy as np
@@ -6,7 +5,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input
 
-model_path = "../modelsss/efficientnetb3-paddy-disease-detection-97.2.h5" 
+model_path = "../efficientnetb3-paddy-disease-detection-97.2.h5" 
 model = tf.keras.models.load_model(model_path)
 
 class_labels = {
@@ -18,8 +17,9 @@ class_labels = {
     5: 'dead_heart',
     6: 'downy_mildew',
     7: 'hispa',
-    8: 'normal',
-    9: 'tungro'
+    8: 'non_paddy_leaf',
+    9: 'normal',
+    10: 'tungro'
 }
 
 def preprocess_image(img):
@@ -100,6 +100,9 @@ def get_disease_info(prediction):
             'prevention_meds': 'Neem-based formulations.',
             'stage': 'Visible symptoms occur during early stages.'
         },
+        'non_paddy_leaf': {
+            'message': 'This is not a paddy leaf. Please enter valid data.'
+        },        
         'normal': {
             'message': 'Your crops are healthy.'
         },
@@ -115,14 +118,13 @@ def get_disease_info(prediction):
 
     return disease_info.get(prediction, {})
 
-#  Now lets make streamlit app
+
 st.title("Paddy Leaf Disease Detection")
 
-uploaded_file = st.file_uploader("Choose a Paddy leaf image...", type="jpg")
+uploaded_file = st.file_uploader("Choose a Paddy leaf image...", type=["jpg","png","jpeg"])
 
-if uploaded_file is not None:
+if uploaded_file is not None and st.button("Classify"):
     st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
-    st.write("")
     st.write("Classifying...")
 
     img = Image.open(uploaded_file)
@@ -143,3 +145,5 @@ if uploaded_file is not None:
         st.write(f"**Pesticides:** {disease_info['pesticides']}")
         st.write(f"**Prevention medicines:** {disease_info['prevention_meds']}")
         st.write(f"**Stage:** {disease_info['stage']}")
+
+        
